@@ -8,7 +8,9 @@ NARUTO_COLOR = (255, 102, 0)
 STAND_INIT_POS = (0, 0)
 CENTER_SCREEN_POS = (600, 400)
 
-COORDENADAS_RECTANGLE_PLAYER = (0, 550, 1200, 300)
+POSITION_RECTANGLE_PLAYABLE = (0, 550, 1200, 300)
+position_player = [20, 550]
+
 
 pg.init()
 
@@ -18,10 +20,14 @@ timer_1_Sec = pg.USEREVENT
 pg.time.set_timer(timer_1_Sec, 1000)
 limit_time = 15
 
+#TODO: Cambiar background por uno de konoha para el menu principal
 background = pg.image.load("./assets/images/background.png")
+
+player = pg.image.load("./assets/images/player.png")
+player = pg.transform.scale(player, (120, 240))
+rect_player = pg.Rect(position_player[0], position_player[1], player.get_width(), player.get_height())
+
 stands = pg.transform.scale(background, SCREEN_DIMENSIONS)
-
-
 stands = pg.image.load("./assets/images/stands-transformed.png")
 stands = pg.transform.scale(stands, (1200, 550))
 
@@ -57,7 +63,8 @@ while game_running:
                 if limit_time != 0:
                     limit_time -= 1
         if event.type == pg.MOUSEBUTTONDOWN:
-            print(event.pos)
+            if rect_player.collidepoint(event.pos):
+                print("Voy a ser Hokage, de veras!")
         if event.type == pg.MOUSEBUTTONUP:
             pass
         if event.type == pg.MOUSEWHEEL:
@@ -76,7 +83,12 @@ while game_running:
     x_limit_text_position = get_screen_center(SCREEN_DIMENSIONS, time_limit_text.get_size())
     screen.blit(time_limit_text, (x_limit_text_position, 50))
 
-    pg.draw.rect(screen, NARUTO_COLOR, COORDENADAS_RECTANGLE_PLAYER)
+    pg.draw.rect(screen, NARUTO_COLOR, POSITION_RECTANGLE_PLAYABLE)
+
+    pg.draw.rect(screen, (255, 255, 255), rect_player)
+    screen.blit(player, rect_player)
+
+
     pg.display.flip()
 
 pg.quit()
