@@ -2,7 +2,6 @@ import pygame.mixer as mixer
 
 
 class Sound:
-
     def __init__(self):
         mixer.init()
 

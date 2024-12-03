@@ -2,6 +2,7 @@ import pygame as pg
 from modules.constants import (GAME_SOUND)
 
 from .main_menu import MainMenu
+from .enter_name import EnterNameScreen
 
 class ScreensManager:
     
@@ -9,9 +10,8 @@ class ScreensManager:
         self.main_screen = screen
         self.current_level = 0
         self.game_started = False
-        # self.jugador_actual = Jugador()
+        # self.jugador_actual = Player()
         
-        # 
         # self.jugador_actual.set_puntaje(1850)
         # self.jugador_actual.actualizar_puntaje_total()
         # self.jugador_actual.set_puntaje(150)
@@ -19,6 +19,7 @@ class ScreensManager:
         
         self.screens = [
             MainMenu(name='main_menu', screen=self.main_screen, x=0, y=0, active=True, level_num=1, music_path=GAME_SOUND),
+            EnterNameScreen(name='screen_enter_name', screen=self.main_screen, x=0, y=0, active=True, level_num=1, music_path=GAME_SOUND, score=0),
         ]
     
     def keys_update(self, event_list: list) -> None:
@@ -40,7 +41,7 @@ class ScreensManager:
             self.screens[0].draw()
             
         elif self.screens[1].active:
-            self.screens[1].update()
+            self.screens[1].update(event_list)
             self.screens[1].draw()
         
         elif self.screens[2].active:

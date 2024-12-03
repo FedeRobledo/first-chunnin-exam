@@ -35,9 +35,8 @@ class MainMenu(Screen):
         ]
     
     def click_start(self, parametro):
-        pass
-        # self.start_first_level = True
-        # self.set_active(parametro)
+        self.start_first_level = True
+        self.set_active(parametro)
     
     def click_level_select(self, parametro):
         self.set_active(parametro)
