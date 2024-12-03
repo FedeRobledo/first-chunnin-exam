@@ -1,6 +1,7 @@
 import pygame as pg
 
-SCREEN_DIMENSIONS = (1200, 800)
+from game import SCREEN_DIMENSIONS
+
 WHITE_COLOR = (255, 255, 255)
 GREEN_COLOR = (0, 255, 0)
 NARUTO_COLOR = (255, 102, 0)
@@ -28,7 +29,7 @@ player = pg.transform.scale(player, (120, 240))
 rect_player = pg.Rect(position_player[0], position_player[1], player.get_width(), player.get_height())
 
 stands = pg.transform.scale(background, SCREEN_DIMENSIONS)
-stands = pg.image.load("./assets/images/stands-transformed.png")
+stands = pg.image.load("./assets/images/stands.png")
 stands = pg.transform.scale(stands, (1200, 550))
 
 font = pg.font.Font("./assets/fonts/ninja-naruto.regular.ttf", 40)
