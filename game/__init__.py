@@ -1,1 +1,1 @@
-from .constants import SCREEN_DIMENSIONS
+from .game import run_game
