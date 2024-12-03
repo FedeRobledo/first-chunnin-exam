@@ -1,8 +1,7 @@
 import pygame as pg
-from game import run_game
+from game import start_game
 
 pg.init()
 
-
 if __name__ == '__main__':
-    run_game()
+    start_game()

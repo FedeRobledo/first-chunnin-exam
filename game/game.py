@@ -1,22 +1,27 @@
 import sys
 import pygame as pg
 
-from .constants import (SCREEN_DIMENSIONS)
+from modules.constants import (SCREEN_DIMENSIONS)
+from screens.screens_manager import ScreensManager
 
-print(SCREEN_DIMENSIONS)
 
-
-def run_game():
+def start_game():
     pg.init()
 
-    main_menu = pg.display.set_mode(SCREEN_DIMENSIONS)
+    main_menu = pg.display.set_mode(SCREEN_DIMENSIONS, pg.SCALED)
     pg.display.set_caption('Examen Chunnin')
     run = True
+
+    screens = ScreensManager(main_menu)
+    
     while run:
         event_list = pg.event.get()
         for event in event_list:
             if event.type == pg.QUIT:
                 run = False
-        # Tengo que comenzar a dibujar las pantallas, debo ver formularios.
+
+        screens.update(event_list)
+        pg.display.update()
+
     pg.quit()
     sys.exit()
