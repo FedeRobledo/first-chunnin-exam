@@ -14,6 +14,10 @@ pg.init()
 
 screen = pg.display.set_mode(SCREEN_DIMENSIONS)
 
+timer_1_Sec = pg.USEREVENT
+pg.time.set_timer(timer_1_Sec, 1000)
+limit_time = 15
+
 background = pg.image.load("./assets/images/background.png")
 stands = pg.transform.scale(background, SCREEN_DIMENSIONS)
 
@@ -46,6 +50,12 @@ while game_running:
     for event in event_list:
         if event.type == pg.QUIT:
             game_running = False
+        if event.type == pg.USEREVENT:
+            if event.type == timer_1_Sec:
+                # Detener timer cuando sea 0
+                print("LIMIT TIME", limit_time)
+                if limit_time != 0:
+                    limit_time -= 1
         if event.type == pg.MOUSEBUTTONDOWN:
             print(event.pos)
         if event.type == pg.MOUSEBUTTONUP:
@@ -57,9 +67,14 @@ while game_running:
     # pg.draw.circle(screen, GREEN_COLOR, (100, 100), 60)
     screen.blit(stands, STAND_INIT_POS)
 
-    x_text_position = get_screen_center(SCREEN_DIMENSIONS, text_dimensions)
+    # Esto lo voy a usar para el menú
+    # x_text_position = get_screen_center(SCREEN_DIMENSIONS, text_dimensions)
+    # screen.blit(text, (x_text_position, 50))
 
-    screen.blit(text, (x_text_position, 50))
+    # Esto lo voy a usar para el tiempo limite para responder las preguntas.
+    time_limit_text = font.render(str(limit_time), True, NARUTO_COLOR)
+    x_limit_text_position = get_screen_center(SCREEN_DIMENSIONS, time_limit_text.get_size())
+    screen.blit(time_limit_text, (x_limit_text_position, 50))
 
     pg.draw.rect(screen, NARUTO_COLOR, COORDENADAS_RECTANGLE_PLAYER)
     pg.display.flip()
