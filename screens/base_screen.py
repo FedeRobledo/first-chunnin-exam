@@ -18,7 +18,6 @@ class Screen:
         for aux_screen in self.screens_dict.values():
             aux_screen.active = False
         self.screens_dict[name].active = True
-        self.music_update()
     
     def music_update(self):
         self.admin_sound.stop_music()

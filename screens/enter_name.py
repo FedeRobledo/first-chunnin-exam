@@ -28,7 +28,7 @@ class EnterNameScreen(Screen):
         self.subtitle = TextTitle(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2-90, text="ingrese su nombre:", screen=screen, font_size=50)
         self.subtitle_score = TextTitle(x=SCREEN_DIMENSIONS[0] - 100, y= 40, text=f"puntaje: {self.score}", screen=screen, font_size=30)
          
-        self.text_box = TextBox(x=SCREEN_DIMENSIONS[0]//2,y=SCREEN_DIMENSIONS[1]//2 + 40, text="_________________", screen=screen)
+        self.text_box = TextBox(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2 + 40, text="_________________", screen=screen)
         self.button_confirm_name = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2+100, text="Confirmar", screen=screen, on_click=self.click_confirm_name)
         
         self.widget_list = [self.title, self.subtitle, self.subtitle_score, self.button_confirm_name]

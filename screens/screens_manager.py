@@ -3,6 +3,8 @@ from modules.constants import (GAME_SOUND)
 
 from .main_menu import MainMenu
 from .enter_name import EnterNameScreen
+from .options import Options
+
 
 class ScreensManager:
     
@@ -20,6 +22,7 @@ class ScreensManager:
         self.screens = [
             MainMenu(name='main_menu', screen=self.main_screen, x=0, y=0, active=True, level_num=1, music_path=GAME_SOUND),
             EnterNameScreen(name='screen_enter_name', screen=self.main_screen, x=0, y=0, active=True, level_num=1, music_path=GAME_SOUND, score=0),
+            Options(name='screen_options', screen=self.main_screen, x=0, y=0, active=True, level_num=1, music_path=GAME_SOUND),
         ]
     
     def keys_update(self, event_list: list) -> None:
