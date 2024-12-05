@@ -34,17 +34,19 @@ class EnterNameScreen(Screen):
         self.widget_list = [self.title, self.subtitle, self.subtitle_score, self.button_confirm_name]
 
         
-    def click_confirm_name(self,parametro:str)->None: 
+    def click_confirm_name(self, parametro:str)->None: 
         '''
         Sets confirm name flag as True 
         Arguments: parametro (str)  
         Returns: None
-        '''  
+        '''
         self.confirm_name = True
         self.player.set_name(self.writing_text.text)
         print(f'Su nombre: {self.player.get_name()} - {self.player.get_total_score()} puntos')
         save_score(self.player)
-        # self.set_active('form_rankings')
+        # self.set_active('ranking')
+        self.set_active('game_screen')
+
         
     def draw(self) -> None:
         '''

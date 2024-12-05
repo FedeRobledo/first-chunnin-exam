@@ -1,6 +1,6 @@
 import pygame as pg
 from .base_screen import Screen
-from modules.constants import (SCREEN_DIMENSIONS, BACKGROUND_PATH)
+from modules.constants import (SCREEN_DIMENSIONS)
 from widgets import (
     TextTitle, Button
 )
@@ -26,7 +26,6 @@ class MainMenu(Screen):
        
         self.button_start = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2, text='Nueva Partida', screen=screen, on_click=self.click_start, on_click_param='screen_enter_name')
        
-        # self.button_level_select = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2, texto='SELECCIONAR NIVEL', pantalla=pantalla, on_click=self.click_level_select, on_click_param='form_level_select')
         self.button_options = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2+75, text='OPCIONES', screen=screen, on_click=self.click_option, on_click_param='screen_options')
         # self.button_rankings = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2+150, text='RANKING', pantalla=pantalla, on_click=self.click_ranking, on_click_param='form_rankings')
         # self.button_exit = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2+225, texto='EXIT', pantalla=pantalla, on_click=self.click_exit)

@@ -6,7 +6,7 @@ from modules.constants import PLAYER_PATH, PLAYER_SIZE
 class Player:
     _instanced = None
     
-    def __init__(self, name: str = 'Naruto', pos_x: int = 0, pos_y: int = 0):
+    def __init__(self, name: str = 'Jugador', pos_x: int = 0, pos_y: int = 0):
         
         if Player._instanced is None:
             Player._instanced = self

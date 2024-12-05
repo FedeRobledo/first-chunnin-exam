@@ -89,7 +89,6 @@
 #     pg.draw.rect(screen, (255, 255, 255), rect_player)
 #     screen.blit(player, rect_player)
 
-
 #     pg.display.flip()
 
 # pg.quit()
