@@ -1,6 +1,10 @@
 import pygame as pg
+
+import json
+import random
+
 from modules.constants import (
-   RANKING_FILE_PATH
+   RANKING_FILE_PATH, ASKS_PATH
 )
 
 
@@ -20,6 +24,7 @@ def get_ranking():
     return ranking
 
 
+# Bubble sort
 def sort_matrix(matrix: list[list]):
     for i in range(len(matrix) - 1):
         for j in range(i+1, len(matrix)):
@@ -32,3 +37,24 @@ def save_score(player_score):
     with open(RANKING_FILE_PATH, '+a') as rkn:
         rkn.write(player_score.to_csv_format())
         print(f'Se guardo el puntaje del jugador: {player_score}')
+
+
+def import_and_return_ask() -> list:
+    """
+    Carga las preguntas desde un archivo JSON, las ordena aleatoriamente 
+    y las devuelve como una lista para ser usadas en el juego.
+    """
+
+    # Cargar el archivo JSON
+    with open(ASKS_PATH, "r", encoding="utf-8") as file:
+        preguntas = json.load(file)
+    
+    # Mezclar aleatoriamente las preguntas
+    random.shuffle(preguntas)
+
+    # Mezclar respuestas de cada pregunta
+    for pregunta in preguntas:
+        if "respuestas" in pregunta:
+            random.shuffle(pregunta["respuestas"])
+
+    return preguntas

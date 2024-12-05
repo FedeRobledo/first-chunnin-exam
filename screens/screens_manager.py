@@ -30,9 +30,7 @@ class ScreensManager:
 
     def keys_update(self, event_list: list) -> None:
         '''
-        Checks if ESC key is pressed to acces the Pause form
-        Arguments: event list (list)
-        Returns: None
+        Futura funcionalidad de pausa cuando apretas escape, y tambien permite salir del juego sin guardar puntaje.
         '''
 
         # for event in event_list:
@@ -57,14 +55,6 @@ class ScreensManager:
         elif self.screens[3].active:
             self.screens[3].update()
             self.screens[3].draw()
-
-            # if self.screens[3].level_restart:
-            #     # Inicializar nuevamente el nivel actual del formulario gestionador de niveles
-            #     pass
-
-        # elif self.screens[4].active:
-        #     self.screens[4].update(event_list)
-        #     self.screens[4].draw()
 
     def update(self, event_list: list):
         self.keys_update(event_list)

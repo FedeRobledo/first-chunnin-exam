@@ -4,15 +4,20 @@ STAND_INIT_POS = (0, 0)
 POSITION_RECTANGLE_PLAYABLE = (0, 550, 1200, 300)
 PLAYER_INIT_POS = (50, 680)
 PLAYER_SIZE = (120, 240)
+STAND_SIZE = (1200, 500)
 
 # Colors
 WHITE_COLOR = (255, 255, 255)
 GREEN_COLOR = (0, 255, 0)
+BLUE_COLOR = (0, 0, 255)
+RED_COLOR = (255, 0, 0)
+
 NARUTO_ORANGE_COLOR = (255, 102, 0)
 
 # Imports
 RANKING_FILE_PATH = './ranking.csv'
-CONFIGS_FILE_PATH = './configs.json'
+# CONFIGS_FILE_PATH = './configs.json'
+ASKS_PATH = './questions.json'
 
 # Paths
 BACKGROUND_PATH = './assets/images/background.png'

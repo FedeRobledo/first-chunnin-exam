@@ -1,0 +1,50 @@
+[
+    {
+        "pregunta": "¿Cual es el camino ninja de Naruto Uzumaki?",
+        "respuestas": [
+            {"texto": "Convertirse en Hokage", "esCorrecta": true},
+            {"texto": "Ser el mas rico de Konoha", "esCorrecta": false}
+        ],
+        "dificultad": "facil"
+    },
+    {
+        "pregunta": "¿Que tecnica es caracteristica del clan Uchiha?",
+        "respuestas": [
+            {"texto": "Sharingan", "esCorrecta": true},
+            {"texto": "Chidori", "esCorrecta": false}
+        ],
+        "dificultad": "facil"
+    },
+    {
+        "pregunta": "¿Como se llama el zorro de nueve colas sellado dentro de Naruto?",
+        "respuestas": [
+            {"texto": "Kurama", "esCorrecta": true},
+            {"texto": "Shukaku", "esCorrecta": false}
+        ],
+        "dificultad": "mediana"
+    },
+    {
+        "pregunta": "¿Que significa 'Akatsuki'?",
+        "respuestas": [
+            {"texto": "Amanecer", "esCorrecta": true},
+            {"texto": "Oscuridad", "esCorrecta": false}
+        ],
+        "dificultad": "mediana"
+    },
+    {
+        "pregunta": "¿Que personaje dijo 'aquel que abandona a sus amigos es peor que basura'?",
+        "respuestas": [
+            {"texto": "Kakashi Hatake", "esCorrecta": true},
+            {"texto": "Naruto Uzumaki", "esCorrecta": false}
+        ],
+        "dificultad": "dificil"
+    },
+    {
+        "pregunta": "¿Cual fue la razon por la que Itachi Uchiha extermino a su clan?",
+        "respuestas": [
+            {"texto": "Para evitar un golpe de estado en Konoha", "esCorrecta": true},
+            {"texto": "Porque odiaba a su clan", "esCorrecta": false}
+        ],
+        "dificultad": "dificil"
+    }
+]

@@ -50,21 +50,25 @@ class Player:
     def update_total_score(self):
         self.total_score += self.score
     
+    # Revisar bien el tema de la /n para cuando lo tenga que leer en la pantalla Ranking
     def to_csv_format(self):
         return f'\n{self.name},{self.total_score}'
     
     def events(self, event_list: list):
-        
-        for event in event_list:
-            if event.type == pg.KEYDOWN:
-                if event_list[pg.K_LEFT]:
-                    self.rect.x -= 2
-                if event_list[pg.K_RIGHT]:
-                    self.rect.x += 2
-                if event_list[pg.K_UP]:
-                    self.rect.y -= 2
-                if event_list[pg.K_DOWN]:
-                    self.rect.y += 2
+        pass
+
+        # Agregar mis propios eventos en función de lo que necesite. 
+         
+        # for event in event_list:
+        #     if event.type == pg.KEYDOWN:
+        #         if event_list[pg.K_LEFT]:
+        #             self.rect.x -= 2
+        #         if event_list[pg.K_RIGHT]:
+        #             self.rect.x += 2
+        #         if event_list[pg.K_UP]:
+        #             self.rect.y -= 2
+        #         if event_list[pg.K_DOWN]:
+        #             self.rect.y += 2
     
     def draw(self, screen):
         screen.blit(self.image, self.rect)

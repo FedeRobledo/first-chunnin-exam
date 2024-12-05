@@ -18,20 +18,21 @@ class EnterNameScreen(Screen):
         self.slave_rect.x = x
         self.slave_rect.y = y
         self.player = Player.get_player()
-        self.score = self.player.get_total_score()
-        self.score = 0
 
         self.music_update()
         self.confirm_name = False
                    
         self.title = TextTitle(x=SCREEN_DIMENSIONS[0]//2, y=50, text="Examenes Chunnin", screen=screen, font_size=60)
         self.subtitle = TextTitle(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2-90, text="ingrese su nombre:", screen=screen, font_size=50)
-        self.subtitle_score = TextTitle(x=SCREEN_DIMENSIONS[0] - 100, y= 40, text=f"puntaje: {self.score}", screen=screen, font_size=30)
          
         self.text_box = TextBox(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2 + 40, text="_________________", screen=screen)
         self.button_confirm_name = Button(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2+100, text="Confirmar", screen=screen, on_click=self.click_confirm_name)
         
-        self.widget_list = [self.title, self.subtitle, self.subtitle_score, self.button_confirm_name]
+        self.widget_list = [
+            self.title,
+            self.subtitle,
+            self.button_confirm_name
+        ]
 
         
     def click_confirm_name(self, parametro:str)->None: 
@@ -43,7 +44,7 @@ class EnterNameScreen(Screen):
         self.confirm_name = True
         self.player.set_name(self.writing_text.text)
         print(f'Su nombre: {self.player.get_name()} - {self.player.get_total_score()} puntos')
-        save_score(self.player)
+        # save_score(self.player)
         # self.set_active('ranking')
         self.set_active('game_screen')
 
