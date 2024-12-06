@@ -25,6 +25,7 @@ def get_ranking():
 
 
 # Bubble sort
+
 def sort_matrix(matrix: list[list]):
     for i in range(len(matrix) - 1):
         for j in range(i+1, len(matrix)):
@@ -39,9 +40,9 @@ def save_score(player_score):
         print(f'Se guardo el puntaje del jugador: {player_score}')
 
 
-def import_and_return_ask() -> list:
+def import_and_return_asks() -> list:
     """
-    Carga las preguntas desde un archivo JSON, las ordena aleatoriamente 
+    Carga las preguntas desde un archivo JSON, las ordena aleatoriamente
     y las devuelve como una lista para ser usadas en el juego.
     """
 

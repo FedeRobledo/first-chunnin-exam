@@ -35,10 +35,10 @@ class EnterNameScreen(Screen):
         ]
 
         
-    def click_confirm_name(self, parametro:str)->None: 
+    def click_confirm_name(self, parametro:str) -> None:
         '''
-        Sets confirm name flag as True 
-        Arguments: parametro (str)  
+        Sets confirm name flag as True
+        Arguments: parametro (str)
         Returns: None
         '''
         self.confirm_name = True
@@ -62,7 +62,7 @@ class EnterNameScreen(Screen):
         self.writing_text = TextTitle(x=SCREEN_DIMENSIONS[0]//2, y=SCREEN_DIMENSIONS[1]//2+30, text=f"{self.text_box.writing.upper()}", screen=self.screen, font_size=30)
         self.writing_text.draw()
 
-    def update(self, event_list)-> None:
+    def update(self, event_list) -> None:
         '''
         Executes the methods that need update 
         Arguments: event list (list)
@@ -70,6 +70,6 @@ class EnterNameScreen(Screen):
         '''
         super().draw()
         self.text_box.update(event_list)
-        for widget in self.widget_list:    
+        for widget in self.widget_list:
             widget.update()
          

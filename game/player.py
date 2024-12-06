@@ -14,6 +14,7 @@ class Player:
         self.name = name
         self.score = 0
         self.total_score = 0
+        self.ask_idx = 0
         self.image = get_images(PLAYER_PATH, PLAYER_SIZE)
         self.rect = self.image.get_rect()
         self.rect.x = pos_x
@@ -35,6 +36,12 @@ class Player:
     def set_name(self, name: str):
         self.name = name
     
+    def set_ask_idx(self, ask: int):
+        self.ask_idx = ask
+
+    def get_ask_idx(self) -> int:
+        return self.ask_idx
+
     def get_actual_score(self):
         return self.score
     

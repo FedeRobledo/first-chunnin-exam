@@ -1,6 +1,6 @@
 from .widget import Widget
 import pygame as pg
-from modules.constants import (KNIFE_SOUND, STANDS_PATH)
+from modules.constants import (KNIFE_SOUND, STANDS_PATH, STAND_SIZE)
 
 
 class Stand(Widget):
@@ -10,7 +10,7 @@ class Stand(Widget):
         
         # Imagen del jugador
         self.image = pg.image.load(STANDS_PATH)
-        self.image = pg.transform.scale(self.image, (120, 240))
+        self.image = pg.transform.scale(self.image, STAND_SIZE)
 
         # Rectangulo para ver si desp lo hago clickeable, sino quitar.
         self.rect = self.image.get_rect()
